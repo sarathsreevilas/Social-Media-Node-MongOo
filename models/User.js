@@ -1,4 +1,4 @@
-const mongoose  = require("mongoose");
+const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema(
   {
@@ -11,15 +11,14 @@ const UserSchema = new mongoose.Schema(
     },
     email: {
       type: String,
-      require: true,
+      required: true,
       max: 50,
       unique: true,
     },
     password: {
       type: String,
-      require: true,
-      min: 7,
-      unique: true,
+      required: true,
+      min: 6,
     },
     profilePicture: {
       type: String,
@@ -31,17 +30,21 @@ const UserSchema = new mongoose.Schema(
     },
     followers: {
       type: Array,
-      default: [], 
+      default: [],
     },
-    followings: { 
+    followings: {
       type: Array,
       default: [],
     },
     isAdmin: {
       type: Boolean,
-      defalult: false,
+      default: false,
     },
     desc: {
+      type: String,
+      max: 50,
+    },
+    city: {
       type: String,
       max: 50,
     },
